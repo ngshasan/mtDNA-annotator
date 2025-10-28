@@ -47,12 +47,42 @@ mtDNA-annotator/
     └── core.py                    ✅ Move script logic here
 ```
 
-### 🧪U Usages: Basic CLI examplee
+### 1) Downloading ClinVar mtDNA VCF File (GRCh37 / rCRS-based)
+
+#### Option A: Download full ClinVar VCF (GRCh37 build)
+```bash
+mkdir clinvar
+cd clivar
+
+wget https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz
+wget https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz.tbi
+
+#### Option B: Extract only mitochondrial variants
+bcftools view -r MT clinvar.vcf.gz -o clinvar_mtDNA.vcf -Ov
+```
+
+### 2) Downloading gnomAD-mtDNA Frequency File
+```bash
+cd ..
+mkdir gnomad
+cd gnomad
+
+# gnomAD v3.1 genomes — chrM (mtDNA)
+wget https://storage.googleapis.com/gcp-public-data--gnomad/release/3.1/vcf/genomes/gnomad.genomes.v3.1.sites.chrM.vcf.bgz
+wget https://storage.googleapis.com/gcp-public-data--gnomad/release/3.1/vcf/genomes/gnomad.genomes.v3.1.sites.chrM.vcf.bgz.tbi
+wget https://storage.googleapis.com/gcp-public-data--gnomad/release/3.1/vcf/genomes/gnomad.genomes.v3.1.sites.chrM.reduced_annotations.tsv
+
+
+#### Convert to TSV (simplified format):
+bcftools query -f '%POS\t%REF\t%ALT\t%INFO/AF\n' gnomad.mtDNA.vcf.bgz > gnomad_mtDNA.tsv
+```
+
+### 🧪U Usage: Basic CLI example
 ```bash
 mtdna-annotate \
   --vcf_folder vcfs \
-  --gnomad gnomad_mtDNA.tsv \
-  --clinvar clinvar_mtDNA.vcf \
+  --gnomad gnomad \
+  --clinvar clinvar \
   --output_prefix my_results \
   --use_gnomad --use_mitomap --use_clinvar
 ```
