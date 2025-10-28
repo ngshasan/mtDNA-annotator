@@ -34,7 +34,27 @@ cd mtDNA-annotator
 pip install .
 ```
 
-### 🧪Usages: Basic CLI example
+---
+
+### 📁 Structure of Folder:
+
+```java
+mtDNA-annotator/
+├── annotate_mtDNA.py              ✅ Main script
+├── README.md                      ✅ From earlier (you already have this)
+├── Dockerfile                     ✅ Included
+├── environment.yml                ✅ For conda
+├── LICENSE                        ✅ MIT License (default)
+├── .gitignore                     ✅ Python/Docker ignores
+├── setup.py                       ✅ For pip installation
+└── mtDNA_annotator/               ✅ Python package folder
+    └── __init__.py
+    └── core.py                    ✅ Move script logic here
+```
+---
+
+### 🧪U Usages: Basic CLI examplee
+
 ```bash
 mtdna-annotate \
   --vcf_folder vcfs \
@@ -44,13 +64,13 @@ mtdna-annotate \
   --use_gnomad --use_mitomap --use_clinvar
 ```
 
-## Required Inputs:
+### Required Inputs:
 
 - vcfs/ — folder with one or more .vcf files
 - gnomad_mtDNA.tsv — gnomAD mtDNA variant frequencies (optional)
 - clinvar_mtDNA.vcf — ClinVar variants limited to chrM/MT (optional)
 
-## Output
+### Output
 
 - my_results.csv — annotated variant data (comma-separated)
 - my_results.tsv — same as above, tab-separated
