@@ -29,7 +29,7 @@ It supports multiple VCF files and outputs both annotated tables and a circular 
 conda create -n mtdna-env python=3.9 -y
 conda activate mtdna-env
 conda install -c conda-forge pandas requests tqdm beautifulsoup4 matplotlib
-
+```
 
 ### Pip Install (Local)
 ```bash
@@ -37,8 +37,9 @@ git clone https://github.com/ngshasan/mtDNA-annotator.git
 cd mtDNA-annotator
 pip install .
 ```
+---
 
-## Usages: Basic CLI example
+### 🧪Usages: Basic CLI example
 ```bash
 mtdna-annotate \
   --vcf_folder vcfs \
@@ -47,6 +48,8 @@ mtdna-annotate \
   --output_prefix my_results \
   --use_gnomad --use_mitomap --use_clinvar
 ```
+
+---
 
 ## Required Inputs:
 
@@ -60,6 +63,8 @@ mtdna-annotate \
 - my_results.tsv — same as above, tab-separated
 - my_results_circular_plot.png — circular genome view of variants
 
+---
+
 ### 📚 Data Sources
 
 - HmtVar (via API)
@@ -67,10 +72,10 @@ mtdna-annotate \
 - gnomAD mtDNA VCF (filtered)
 - ClinVar VCF (filtered to chrM)
 
-
 ### 🛠 Developer Info
 
 - Language: Python 3.7+
 - Packages: pandas, requests, tqdm, beautifulsoup4, matplotlib
 - Entry point: mtDNA_annotator/core.py
 
+---
