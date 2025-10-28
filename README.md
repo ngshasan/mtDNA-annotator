@@ -9,8 +9,6 @@
 
 It supports multiple VCF files and outputs both annotated tables and a circular genome visualization of variant positions.
 
----
-
 ## ✨ Features
 
 ✅ Batch annotate multiple mtDNA VCF files  
@@ -19,8 +17,6 @@ It supports multiple VCF files and outputs both annotated tables and a circular 
 ✅ Optional gnomAD frequency merging  
 ✅ Optional ClinVar clinical significance lookup  
 ✅ Outputs `.csv`, `.tsv`, and a circular plot of variants
-
----
 
 ## 📦 Installation
 
@@ -37,7 +33,6 @@ git clone https://github.com/ngshasan/mtDNA-annotator.git
 cd mtDNA-annotator
 pip install .
 ```
----
 
 ### 🧪Usages: Basic CLI example
 ```bash
@@ -48,8 +43,6 @@ mtdna-annotate \
   --output_prefix my_results \
   --use_gnomad --use_mitomap --use_clinvar
 ```
-
----
 
 ## Required Inputs:
 
@@ -62,8 +55,6 @@ mtdna-annotate \
 - my_results.csv — annotated variant data (comma-separated)
 - my_results.tsv — same as above, tab-separated
 - my_results_circular_plot.png — circular genome view of variants
-
----
 
 ### 📚 Data Sources
 
@@ -78,4 +69,3 @@ mtdna-annotate \
 - Packages: pandas, requests, tqdm, beautifulsoup4, matplotlib
 - Entry point: mtDNA_annotator/core.py
 
----
