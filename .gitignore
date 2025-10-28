@@ -22,3 +22,13 @@ venv/
 # Docker
 *.tar
 
+# Ignore raw variant files
+*.vcf
+*.vcf.gz
+*.tbi
+
+# Optional: ignore all BAM/FASTQ too
+*.bam
+*.fastq
+*.fq
+*.sam
